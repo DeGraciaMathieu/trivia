@@ -6,6 +6,7 @@ use App\Models\Fiche;
 use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Mcp\Request;
 use Laravel\Mcp\Response;
+use Laravel\Mcp\ResponseFactory;
 use Laravel\Mcp\Server\Attributes\Description;
 use Laravel\Mcp\Server\Attributes\Name;
 use Laravel\Mcp\Server\Tool;
@@ -14,7 +15,7 @@ use Laravel\Mcp\Server\Tool;
 #[Description('Liste les fiches existantes, avec filtre par catégorie ou recherche plein texte. À appeler avant toute création, pour ne pas traiter deux fois le même sujet.')]
 class ListerFichesTool extends Tool
 {
-    public function handle(Request $request): Response
+    public function handle(Request $request): Response|ResponseFactory
     {
         $fiches = Fiche::query()
             ->when($request->get('categorie'), fn ($q, $c) => $q->where('categorie', $c))
