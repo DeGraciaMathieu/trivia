@@ -87,7 +87,7 @@ class CreerFicheTool extends Tool
                 ->required(),
 
             'date' => $schema->string()
-                ->description('Libellé de datation affiché sous le titre : « 1963 — MIT, projet MAC », « années 1970 — Unix ».')
+                ->description('Libellé de datation affiché sous le titre : « 1963, MIT, projet MAC », « années 1970, Unix ».')
                 ->required(),
 
             'teaser' => $schema->string()
