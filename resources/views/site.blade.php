@@ -84,8 +84,8 @@ h1 span{color:var(--ac)}
 .sheet.on{transform:translateY(0)}
 @media(min-width:760px){
   .sheet{left:50%;right:auto;bottom:auto;top:50%;width:min(640px,92vw);padding:34px 38px 44px;
-    transform:translate(-50%,-45%);opacity:0;transition:opacity .18s,transform .18s}
-  .sheet.on{transform:translate(-50%,-50%);opacity:1}
+    transform:translate(-50%,-45%);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}
+  .sheet.on{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}
 }
 .sheet .fermer{position:absolute;top:14px;right:14px;width:30px;height:30px;line-height:1;
   border:1px solid var(--hair);background:none;color:var(--tx2);cursor:pointer;font-size:13px}
