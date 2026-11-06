@@ -3,11 +3,16 @@
 namespace App\Models;
 
 use App\Support\Fiches;
+use Database\Factories\FicheFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
 class Fiche extends Model
 {
+    /** @use HasFactory<FicheFactory> */
+    use HasFactory;
+
     public const CATEGORIES = [
         'HTTP', 'Web', 'Réseau', 'Unix', 'Matériel',
         'Langages & outils', 'Méthodes', 'Culture', 'Contresens',
