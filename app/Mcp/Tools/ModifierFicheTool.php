@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Mcp\Request;
 use Laravel\Mcp\Response;
 use Laravel\Mcp\Server\Attributes\Description;
+use Laravel\Mcp\Server\Attributes\Name;
 use Laravel\Mcp\Server\Tool;
 
+#[Name('modifier_fiche')]
 #[Description('Modifie une fiche existante et republie aussitôt. Seuls les champs fournis sont touchés. L\'état précédent est archivé automatiquement.')]
 class ModifierFicheTool extends Tool
 {

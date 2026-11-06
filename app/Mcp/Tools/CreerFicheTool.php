@@ -10,8 +10,10 @@ use Illuminate\Support\Str;
 use Laravel\Mcp\Request;
 use Laravel\Mcp\Response;
 use Laravel\Mcp\Server\Attributes\Description;
+use Laravel\Mcp\Server\Attributes\Name;
 use Laravel\Mcp\Server\Tool;
 
+#[Name('creer_fiche')]
 #[Description('Crée une fiche et la publie immédiatement sur le site. Appeler lister_fiches avant, pour vérifier que le sujet n\'est pas déjà traité.')]
 class CreerFicheTool extends Tool
 {

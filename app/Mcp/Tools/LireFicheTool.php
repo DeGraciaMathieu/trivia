@@ -7,8 +7,10 @@ use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Mcp\Request;
 use Laravel\Mcp\Response;
 use Laravel\Mcp\Server\Attributes\Description;
+use Laravel\Mcp\Server\Attributes\Name;
 use Laravel\Mcp\Server\Tool;
 
+#[Name('lire_fiche')]
 #[Description('Renvoie une fiche complète. Utile pour la relire avant de la modifier, ou pour s\'inspirer du ton des fiches existantes.')]
 class LireFicheTool extends Tool
 {

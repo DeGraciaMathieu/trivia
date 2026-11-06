@@ -41,7 +41,69 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
-    @vite(['resources/css/app.css'])
+    {{-- Pas de build front : les classes utilisées par cette vue sont définies ici. --}}
+    <style>
+        :root { --bg: #fff; --tx: #0d0d0d; --tx2: #4a4a4a; --hair: #e2e2e2; --muted: #f5f5f5; --ac: #d8432c; }
+        html.dark { --bg: #0c0c0c; --tx: #f2f0ec; --tx2: #b3afa8; --hair: #2a2a2a; --muted: #141414; --ac: #ff6a4d; }
+        *, ::before, ::after { box-sizing: border-box; border: 0 solid var(--hair); }
+        body { margin: 0; line-height: 1.5; }
+        h3, p, ul { margin: 0; padding: 0; list-style: none; }
+        button { font: inherit; cursor: pointer; }
+        .font-sans { font-family: 'Instrument Sans', system-ui, sans-serif; }
+        .antialiased { -webkit-font-smoothing: antialiased; }
+        .bg-background, .bg-card { background: var(--bg); }
+        .text-foreground, .text-card-foreground { color: var(--tx); }
+        .text-muted-foreground { color: var(--tx2); }
+        .bg-muted\/50 { background: var(--muted); }
+        .text-primary { color: var(--ac); }
+        .bg-primary { background: var(--ac); }
+        .bg-primary\/10 { background: color-mix(in srgb, var(--ac) 10%, transparent); }
+        .text-primary-foreground { color: #fff; }
+        .min-h-screen { min-height: 100vh; }
+        .flex { display: flex; }
+        .inline-flex { display: inline-flex; }
+        .hidden { display: none; }
+        .flex-col { flex-direction: column; }
+        .flex-1 { flex: 1; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .justify-center { justify-content: center; }
+        .gap-2 { gap: .5rem; }
+        .gap-3 { gap: .75rem; }
+        .space-y-1\.5 > * + * { margin-top: .375rem; }
+        .space-y-2 > * + * { margin-top: .5rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .w-full { width: 100%; }
+        .max-w-md { max-width: 28rem; }
+        .h-12 { height: 3rem; } .w-12 { width: 3rem; }
+        .h-10 { height: 2.5rem; }
+        .h-4 { height: 1rem; } .w-4 { width: 1rem; }
+        .h-1\.5 { height: .375rem; } .w-1\.5 { width: .375rem; }
+        .p-1 { padding: .25rem; } .p-4 { padding: 1rem; } .p-6 { padding: 1.5rem; }
+        .pt-0 { padding-top: 0; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-2 { padding-top: .5rem; padding-bottom: .5rem; }
+        .mb-2 { margin-bottom: .5rem; } .mb-4 { margin-bottom: 1rem; }
+        .mt-0\.5 { margin-top: .125rem; }
+        .mr-2 { margin-right: .5rem; } .mr-3 { margin-right: .75rem; } .-ml-1 { margin-left: -.25rem; }
+        .border { border-width: 1px; }
+        .rounded { border-radius: .25rem; } .rounded-md { border-radius: .375rem; }
+        .rounded-lg { border-radius: .5rem; } .rounded-full { border-radius: 9999px; }
+        .shadow-sm { box-shadow: 0 1px 2px rgb(0 0 0 / .05); }
+        .object-contain { object-fit: contain; }
+        .text-xs { font-size: .75rem; } .text-sm { font-size: .875rem; } .text-2xl { font-size: 1.5rem; }
+        .font-medium { font-weight: 500; } .font-semibold { font-weight: 600; }
+        .leading-none { line-height: 1; }
+        .tracking-tight { letter-spacing: -.025em; }
+        .text-center { text-align: center; }
+        .underline { text-decoration: underline; }
+        .break-all { word-break: break-all; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .opacity-25 { opacity: .25; } .opacity-75 { opacity: .75; }
+        .disabled\:opacity-50:disabled { opacity: .5; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body class="font-sans antialiased bg-background text-foreground">
 <div class="min-h-screen flex items-center justify-center p-4">

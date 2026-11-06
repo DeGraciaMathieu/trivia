@@ -7,8 +7,10 @@ use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Mcp\Request;
 use Laravel\Mcp\Response;
 use Laravel\Mcp\Server\Attributes\Description;
+use Laravel\Mcp\Server\Attributes\Name;
 use Laravel\Mcp\Server\Tool;
 
+#[Name('supprimer_fiche')]
 #[Description('Retire une fiche du site. Le contenu reste dans l\'historique et peut être rétabli. Ne jamais appeler sans demande explicite.')]
 class SupprimerFicheTool extends Tool
 {
